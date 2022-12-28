@@ -48,8 +48,12 @@ write_path = f"/mnt/{uct_transform_gen}/{location}/{table_name}"
 
 # COMMAND ----------
 
+dbutils.fs.ls("dbfs:/mnt/")
+
+# COMMAND ----------
+
 # dbfs_file_location = file_location.replace("/dbfs", "dbfs:")
-# # print(dbutils.fs.ls(dbfs_file_location))
+# print(dbutils.fs.ls(dbfs_file_location))
 
 # print(dbutils.fs.rm(dbfs_file_location, recurse=True))
 # print(dbutils.fs.rm(write_path, recurse=True))
@@ -84,7 +88,7 @@ all_csv_files = glob.glob(f"{file_location}/*/*/*.csv")
 all_csv_files = list(map(rename, all_csv_files))
 
 # print(f"Number of All csv files: {len(all_csv_files)}")
-# print(f"all csv files:{all_csv_files}")
+print(f"all csv files:{all_csv_files}")
 
 
 # COMMAND ----------
